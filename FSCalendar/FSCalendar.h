@@ -363,6 +363,11 @@ IB_DESIGNABLE
 @property (assign, nonatomic) IBInspectable BOOL allowsMultipleSelection;
 
 /**
+ A Boolean value that determines whether the calendar scrolls on selection
+ */
+@property (assign, nonatomic) IBInspectable BOOL allowsScrollingOnSelection;
+
+/**
  A Boolean value that determines whether the bounding rect changes when the displayed month of the calendar is changed.
  */
 @property (assign, nonatomic) IBInspectable BOOL adjustsBoundingRectWhenChangingMonths;
