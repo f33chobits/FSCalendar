@@ -148,6 +148,20 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)calendarCurrentPageDidChange:(FSCalendar *)calendar;
 
+/**
+ Tells the delegate the calendar scrollView did finish scrolling.
+ */
+- (void)calendarScrollViewDidEndScroll:(UIScrollView *)scrollView;
+
+/**
+ These functions are deprecated
+ */
+- (void)calendarCurrentScopeWillChange:(FSCalendar *)calendar animated:(BOOL)animated FSCalendarDeprecated(-calendar:boundingRectWillChange:animated:);
+- (void)calendarCurrentMonthDidChange:(FSCalendar *)calendar FSCalendarDeprecated(-calendarCurrentPageDidChange:);
+- (BOOL)calendar:(FSCalendar *)calendar shouldSelectDate:(NSDate *)date FSCalendarDeprecated(-calendar:shouldSelectDate:atMonthPosition:);- (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date FSCalendarDeprecated(-calendar:didSelectDate:atMonthPosition:);
+- (BOOL)calendar:(FSCalendar *)calendar shouldDeselectDate:(NSDate *)date FSCalendarDeprecated(-calendar:shouldDeselectDate:atMonthPosition:);
+- (void)calendar:(FSCalendar *)calendar didDeselectDate:(NSDate *)date FSCalendarDeprecated(-calendar:didDeselectDate:atMonthPosition:);
+
 @end
 
 /**
