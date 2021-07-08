@@ -712,6 +712,7 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
         _today = nil;
     } else {
         FSCalendarAssertDateInBounds(today,self.gregorian,self.minimumDate,self.maximumDate);
+        _today = [self.gregorian dateBySettingHour:0 minute:0 second:0 ofDate:today options:0];
         [self updateToday];
     }
     if (self.hasValidateVisibleLayout) {
