@@ -1107,7 +1107,14 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
         if (self.selectedDate && !self.allowsMultipleSelection) {
             [self deselectDate:self.selectedDate];
         }
-        [_collectionView selectItemAtIndexPath:targetIndexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+        
+        NSInteger numberOfItems = [_collectionView numberOfItemsInSection:targetIndexPath.section];
+        if (targetIndexPath.item < numberOfItems && targetIndexPath.item >= 0) {
+            [_collectionView selectItemAtIndexPath:targetIndexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+        } else {
+            return;
+        }
+
         FSCalendarCell *cell = (FSCalendarCell *)[_collectionView cellForItemAtIndexPath:targetIndexPath];
         [cell performSelecting];
         [self enqueueSelectedDate:targetDate];
