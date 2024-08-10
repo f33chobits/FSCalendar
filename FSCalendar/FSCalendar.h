@@ -4,7 +4,7 @@
 //
 //  Created by Wenchao Ding on 29/1/15.
 //  Copyright © 2016 Wenchao Ding. All rights reserved.
-// 
+//
 //  https://github.com/WenchaoD
 //
 //  FSCalendar is a superior awesome calendar control with high performance, high customizablility and very simple usage.
@@ -151,7 +151,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * FSCalendarDelegateAppearance determines the fonts and colors of components in the calendar, but more specifically. Basically, if you need to make a global customization of appearance of the calendar, use FSCalendarAppearance. But if you need different appearance for different days, use FSCalendarDelegateAppearance.
+ * FSCalendarDelegateAppearance determines the fonts and colors of components in the calendar, but more specificly. Basically, if you need to make a global customization of appearance of the calendar, use FSCalendarAppearance. But if you need different appearance for different days, use FSCalendarDelegateAppearance.
  *
  * @see FSCalendarAppearance
  */
@@ -243,11 +243,6 @@ IB_DESIGNABLE
 @interface FSCalendar : UIView
 
 /**
- * The timezone of the calendar. `defaultTimeZone` by default.
- */
-@property (strong, nonatomic) NSTimeZone *timeZone;
-
-/**
  * The object that acts as the delegate of the calendar.
  */
 @property (weak, nonatomic) IBOutlet id<FSCalendarDelegate> delegate;
@@ -273,13 +268,13 @@ IB_DESIGNABLE
  * The locale of month and weekday symbols. Change it to display them in your own language.
  *
  * e.g. To display them in Chinese:
- * 
+ *
  *    calendar.locale = [NSLocale localeWithLocaleIdentifier:@"zh-CN"];
  */
 @property (copy, nonatomic) NSLocale *locale;
 
 /**
- * The scroll direction of FSCalendar. 
+ * The scroll direction of FSCalendar.
  *
  * e.g. To make the calendar scroll vertically
  *
@@ -288,7 +283,7 @@ IB_DESIGNABLE
 @property (assign, nonatomic) FSCalendarScrollDirection scrollDirection;
 
 /**
- * The scope of calendar, change scope will trigger an inner frame change, make sure the frame has been correctly adjusted in 
+ * The scope of calendar, change scope will trigger an inner frame change, make sure the frame has been correctly adjusted in
  *
  *    - (void)calendar:(FSCalendar *)calendar boundingRectWillChange:(CGRect)bounds animated:(BOOL)animated;
  */
@@ -514,6 +509,10 @@ IB_DESIGNABLE
  @param sender A UIPanGestureRecognizer instance which controls the scope of the calendar
  */
 - (void)handleScopeGesture:(UIPanGestureRecognizer *)sender;
+
+
+// 추가: isWeekCalendarView 속성 선언
+@property (nonatomic, assign) BOOL isWeekCalendarView;
 
 @end
 
