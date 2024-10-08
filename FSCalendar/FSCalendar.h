@@ -7,7 +7,7 @@
 // 
 //  https://github.com/WenchaoD
 //
-//  FSCalendar is a superior awesome calendar control with high performance, high customizablility and very simple usage.
+//  FSCalendar is a superior awesome calendar control with high performance, high customizability and very simple usage.
 //
 //  @see FSCalendarDataSource
 //  @see FSCalendarDelegate
@@ -89,7 +89,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSDate *)maximumDateForCalendar:(FSCalendar *)calendar;
 
 /**
- * Asks the data source for a cell to insert in a particular data of the calendar.
+ * Asks the data source for a cell to insert in a particular date of the calendar.
  */
 - (__kindof FSCalendarCell *)calendar:(FSCalendar *)calendar cellForDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)position;
 
@@ -106,7 +106,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- * The delegate of a FSCalendar object must adopt the FSCalendarDelegate protocol. The optional methods of FSCalendarDelegate manage selections、 user events and help to manager the frame of the calendar.
+ * The delegate of a FSCalendar object must adopt the FSCalendarDelegate protocol. The optional methods of FSCalendarDelegate manage selections、 user events and help to manage the frame of the calendar.
  */
 @protocol FSCalendarDelegate <NSObject>
 
